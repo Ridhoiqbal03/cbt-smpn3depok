@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations for modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+}
+
+.modal-enter {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-exit {
+    animation: modalFadeOut 0.3s ease-in;
+}
+
+/* Custom button hover effects */
+.btn-success {
+    @apply bg-green-600 text-white px-4 py-2 rounded-lg transition-all duration-200;
+}
+
+.btn-success:hover {
+    @apply bg-green-700 transform scale-105 shadow-lg;
+}
+
+/* Error message styling */
+.error-message {
+    @apply text-red-500 text-sm mt-1 animate-pulse;
+}
+
+/* Success message styling */
+.success-message {
+    @apply text-green-600 text-sm mt-1;
+}
